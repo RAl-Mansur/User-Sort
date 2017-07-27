@@ -51,12 +51,14 @@ namespace UserSort
                 if (fileExtension == ".json")
                 {
                     users.AddRange(ImportFiles.LoadJSON(file));
-                } else if (fileExtension == ".xml")
+                }
+                else if (fileExtension == ".xml")
                 {
                     users.AddRange(ImportFiles.LoadXML(file));
-                } else if (fileExtension == ".csv")
+                }
+                else if (fileExtension == ".csv")
                 {
-                    users.AddRange(ImportFiles.LoadCSV(file)); 
+                    users.AddRange(ImportFiles.LoadCSV(file));
                 }
             }
 
@@ -70,12 +72,21 @@ namespace UserSort
             if (MessageBox.Show("Sort users by User ID?", "Sort Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 // Sort data
-            } else
-            {
-                var list = new BindingList<User>(users);
-                dataGridView1.DataSource = list;
+                users = SortData.SortByUserID(users);
             }
-                       
+
+            var list = new BindingList<User>(users);
+            dataGridView1.DataSource = list;
+            btnExport.Enabled = true;
         }
+
+
+
+        // Export Data to CSV, JSON and XML
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -46,10 +46,8 @@ namespace UserSort.Classes
                 user.username = node.ChildNodes[3].InnerText;
                 user.user_type = node.ChildNodes[4].InnerText;
                 user.last_login_time = node.ChildNodes[5].InnerText;
-
                 users.Add(user);
             }
-
             return users;
         }
 
@@ -63,18 +61,11 @@ namespace UserSort.Classes
             {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(",");
-                //bool isFirstLine = true;
 
                 parser.ReadLine(); // Read header
 
                 while (!parser.EndOfData)
                 {
-                    //if (isFirstLine)
-                    //{
-                    //    isFirstLine = false;
-                    //    continue;
-                    //}
-
                     User user = new User();
                     string[] fields = parser.ReadFields();
 
@@ -91,5 +82,7 @@ namespace UserSort.Classes
             return users;
         }
 
+
+        
     }
 }

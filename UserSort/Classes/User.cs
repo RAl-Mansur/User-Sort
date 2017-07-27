@@ -14,8 +14,5 @@ namespace UserSort.Classes
         public string username { get; set; }
         public string user_type { get; set; }
         public string last_login_time { get; set; }
-
     }
-
-
 }

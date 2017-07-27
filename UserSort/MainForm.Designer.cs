@@ -32,6 +32,7 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.btnDisplay = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,11 +79,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(745, 355);
             this.dataGridView1.TabIndex = 4;
             // 
+            // btnExport
+            // 
+            this.btnExport.Enabled = false;
+            this.btnExport.Location = new System.Drawing.Point(374, 26);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(95, 31);
+            this.btnExport.TabIndex = 5;
+            this.btnExport.Text = "Export Data";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 478);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.btnImport);
@@ -101,6 +114,7 @@
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 
