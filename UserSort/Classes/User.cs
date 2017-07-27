@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace UserSort.Classes
 {
-    class User
+    public class User
     {
-        private int userID { get; set; }
-        private string firstName { get; set; }
-        private string lastName { get; set; }
-        private string username { get; set; }
-        private string userType { get; set; }
-        private string lastLoginTime { get; set; }
+        public int user_id { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string username { get; set; }
+        public string user_type { get; set; }
+        public string last_login_time { get; set; }
 
     }
+
+
 }

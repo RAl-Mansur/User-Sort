@@ -30,6 +30,7 @@
         {
             this.btnSelect = new System.Windows.Forms.Button();
             this.rtbOutput = new System.Windows.Forms.RichTextBox();
+            this.btnImport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSelect
@@ -51,14 +52,25 @@
             this.rtbOutput.TabIndex = 1;
             this.rtbOutput.Text = "";
             // 
-            // Form1
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(140, 26);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(111, 30);
+            this.btnImport.TabIndex = 2;
+            this.btnImport.Text = "Import Files";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 395);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.btnSelect);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Sort";
             this.ResumeLayout(false);
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.RichTextBox rtbOutput;
+        private System.Windows.Forms.Button btnImport;
     }
 }
 
