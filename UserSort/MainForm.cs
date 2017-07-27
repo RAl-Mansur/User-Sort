@@ -56,11 +56,15 @@ namespace UserSort
                     users.AddRange(ImportFiles.LoadXML(file));
                 } else if (fileExtension == ".csv")
                 {
-
+                    users.AddRange(ImportFiles.LoadCSV(file)); 
                 }
             }
         }
 
-        
+        // Display List of Users on Rich Text box
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

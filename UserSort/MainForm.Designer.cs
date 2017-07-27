@@ -31,6 +31,7 @@
             this.btnSelect = new System.Windows.Forms.Button();
             this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.btnImport = new System.Windows.Forms.Button();
+            this.btnDisplay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSelect
@@ -45,6 +46,7 @@
             // 
             // rtbOutput
             // 
+            this.rtbOutput.BackColor = System.Drawing.Color.White;
             this.rtbOutput.Location = new System.Drawing.Point(27, 91);
             this.rtbOutput.Name = "rtbOutput";
             this.rtbOutput.ReadOnly = true;
@@ -62,11 +64,22 @@
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // btnDisplay
+            // 
+            this.btnDisplay.Location = new System.Drawing.Point(257, 26);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(111, 31);
+            this.btnDisplay.TabIndex = 3;
+            this.btnDisplay.Text = "Display Data";
+            this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 395);
+            this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.btnSelect);
@@ -82,6 +95,7 @@
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.RichTextBox rtbOutput;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnDisplay;
     }
 }
 
