@@ -59,12 +59,23 @@ namespace UserSort
                     users.AddRange(ImportFiles.LoadCSV(file)); 
                 }
             }
+
+            btnImport.Enabled = false;
+            MessageBox.Show("Files have been imported!", "Success", MessageBoxButtons.OK);
         }
 
         // Display List of Users on Rich Text box
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Sort users by User ID?", "Sort Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Sort data
+            } else
+            {
+                var list = new BindingList<User>(users);
+                dataGridView1.DataSource = list;
+            }
+                       
         }
     }
 }

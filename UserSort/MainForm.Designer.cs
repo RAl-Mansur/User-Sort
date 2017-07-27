@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.btnSelect = new System.Windows.Forms.Button();
-            this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnDisplay = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelect
@@ -43,16 +44,6 @@
             this.btnSelect.Text = "Select Data";
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
-            // rtbOutput
-            // 
-            this.rtbOutput.BackColor = System.Drawing.Color.White;
-            this.rtbOutput.Location = new System.Drawing.Point(27, 91);
-            this.rtbOutput.Name = "rtbOutput";
-            this.rtbOutput.ReadOnly = true;
-            this.rtbOutput.Size = new System.Drawing.Size(745, 292);
-            this.rtbOutput.TabIndex = 1;
-            this.rtbOutput.Text = "";
             // 
             // btnImport
             // 
@@ -74,18 +65,32 @@
             this.btnDisplay.UseVisualStyleBackColor = true;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 91);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(745, 355);
+            this.dataGridView1.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 395);
+            this.ClientSize = new System.Drawing.Size(797, 478);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.btnImport);
-            this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.btnSelect);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Sort";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -93,9 +98,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.RichTextBox rtbOutput;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnDisplay;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
