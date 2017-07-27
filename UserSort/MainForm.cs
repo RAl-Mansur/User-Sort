@@ -23,7 +23,7 @@ namespace UserSort
             InitializeComponent();
         }
 
-        // Allow user to select CVS, JSON and XML files
+        // Display Open File Dialog box to allow users to select CVS, JSON and XML files
         private void btnSelect_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -40,13 +40,23 @@ namespace UserSort
             }
         }
 
+        // Import selected files
         private void btnImport_Click(object sender, EventArgs e)
         {
             foreach (string file in selectedFiles)
             {
-                if (Path.GetExtension(file) == ".json")
+
+                string fileExtension = Path.GetExtension(file);
+
+                if (fileExtension == ".json")
                 {
-                    users = ImportFiles.LoadJSON(file);
+                    users.AddRange(ImportFiles.LoadJSON(file));
+                } else if (fileExtension == ".xml")
+                {
+                    users.AddRange(ImportFiles.LoadXML(file));
+                } else if (fileExtension == ".csv")
+                {
+
                 }
             }
         }
