@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace UserSort.Classes
 {
+    /// <summary>
+    /// User class. Object will hold data imported from files 
+    /// </summary>
     public class User
     {
         public int user_id { get; set; }

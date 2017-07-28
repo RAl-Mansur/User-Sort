@@ -7,27 +7,44 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace UserSort.Classes
 {
     public static class ExportData
     {
-
-        public static void ExportXML(List<User> users, string fileName = "users")
+        // Convert generic list to XML
+        public static void ExportXML(List<User> users, string path)
         {
             var serializer = new XmlSerializer(typeof(List<User>));
-            using (var stream = File.OpenWrite(fileName + ".xml"))
+            using (var stream = File.OpenWrite(path + ".xml"))
             {
                 serializer.Serialize(stream, users);
-            } 
+            }
         }
 
-        public static void ExportJSON(List<User> users, string fileName = "users")
+        // Convert generic list to JSON data
+        public static void ExportJSON(List<User> users, string path)
         {
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
-            File.WriteAllText(fileName + @".json", json);
+            File.WriteAllText(path + @".json", json);
+        }
 
-            // SORT OUT LAST LOGGED IN FORMAT
+        // Convert generic list to CSV format
+        public static void ExportCSV<T>(IEnumerable<T> items, string path)
+        {
+            Type itemType = typeof(T);
+            var props = itemType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            using (var writer = new StreamWriter(path + @".csv"))
+            {
+                writer.WriteLine(string.Join(", ", props.Select(p => p.Name)));
+
+                foreach (var item in items)
+                {
+                    writer.WriteLine(string.Join(", ", props.Select(p => p.GetValue(item, null))));
+                }
+            }
         }
 
     }

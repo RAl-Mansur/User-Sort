@@ -37,36 +37,30 @@ namespace UserSort
                 {
                     selectedFiles = ofd.FileNames;
                     btnSelect.Enabled = false;
-                    btnImport.Enabled = true;
+
+                    foreach (string file in selectedFiles)
+                    {
+
+                        string fileExtension = Path.GetExtension(file);
+
+                        if (fileExtension == ".json")
+                        {
+                            users.AddRange(ImportFiles.LoadJSON(file));
+                        }
+                        else if (fileExtension == ".xml")
+                        {
+                            users.AddRange(ImportFiles.LoadXML(file));
+                        }
+                        else if (fileExtension == ".csv")
+                        {
+                            users.AddRange(ImportFiles.LoadCSV(file));
+                        }
+                    }
+
+                    btnDisplay.Enabled = true;
+                    MessageBox.Show("Files have been imported!", "Success", MessageBoxButtons.OK);
                 }
             }
-        }
-
-        // Import selected files
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            foreach (string file in selectedFiles)
-            {
-
-                string fileExtension = Path.GetExtension(file);
-
-                if (fileExtension == ".json")
-                {
-                    users.AddRange(ImportFiles.LoadJSON(file));
-                }
-                else if (fileExtension == ".xml")
-                {
-                    users.AddRange(ImportFiles.LoadXML(file));
-                }
-                else if (fileExtension == ".csv")
-                {
-                    users.AddRange(ImportFiles.LoadCSV(file));
-                }
-            }
-
-            btnImport.Enabled = false;
-            btnDisplay.Enabled = true;
-            MessageBox.Show("Files have been imported!", "Success", MessageBoxButtons.OK);
         }
 
         // Display List of Users on Rich Text box
@@ -97,8 +91,13 @@ namespace UserSort
                 if (folderBrowser.ShowDialog() == DialogResult.OK)
                 {
                     saveLocation = folderBrowser.SelectedPath;
-                    //ExportData.ExportXML(users, saveLocation + @"\users");
+                    ExportData.ExportXML(users, saveLocation + @"\users");
                     ExportData.ExportJSON(users, saveLocation + @"\users");
+                    ExportData.ExportCSV(users, saveLocation + @"\users");
+
+                    btnExport.Enabled = false;
+                    btnDisplay.Enabled = false;
+                    MessageBox.Show("Files have been exported!", "Success", MessageBoxButtons.OK);
                 }
 
 

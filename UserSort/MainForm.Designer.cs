@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSelect = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
             this.btnDisplay = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnExport = new System.Windows.Forms.Button();
@@ -46,21 +45,10 @@
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // btnImport
-            // 
-            this.btnImport.Enabled = false;
-            this.btnImport.Location = new System.Drawing.Point(140, 26);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(111, 30);
-            this.btnImport.TabIndex = 2;
-            this.btnImport.Text = "Import Files";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
             // btnDisplay
             // 
             this.btnDisplay.Enabled = false;
-            this.btnDisplay.Location = new System.Drawing.Point(257, 26);
+            this.btnDisplay.Location = new System.Drawing.Point(140, 26);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(111, 31);
             this.btnDisplay.TabIndex = 3;
@@ -84,7 +72,7 @@
             // btnExport
             // 
             this.btnExport.Enabled = false;
-            this.btnExport.Location = new System.Drawing.Point(374, 26);
+            this.btnExport.Location = new System.Drawing.Point(257, 26);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(95, 31);
             this.btnExport.TabIndex = 5;
@@ -100,7 +88,6 @@
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDisplay);
-            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnSelect);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -113,7 +100,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnExport;
