@@ -14,5 +14,19 @@ namespace UserSort.Classes
         public string username { get; set; }
         public string user_type { get; set; }
         public string last_login_time { get; set; }
+
+        public User() { }
+
+        public User(int userID, string fName, string lName, string username, string type, string lastLogin)
+        {
+            this.user_id = userID;
+            this.first_name = fName;
+            this.last_name = lName;
+            this.username = username;
+            this.user_type = type;
+            this.last_login_time = lastLogin;
+        }
+
+
     }
 }

@@ -38,14 +38,10 @@ namespace UserSort.Classes
 
             foreach (XmlNode node in doc.DocumentElement)
             {
-                User user = new User();
+                User user = new User(Convert.ToInt32(node.ChildNodes[0].InnerText), node.ChildNodes[1].InnerText, 
+                    node.ChildNodes[2].InnerText, node.ChildNodes[3].InnerText, node.ChildNodes[4].InnerText, 
+                    node.ChildNodes[5].InnerText);
 
-                user.user_id = Convert.ToInt32(node.ChildNodes[0].InnerText);
-                user.first_name = node.ChildNodes[1].InnerText;
-                user.last_name = node.ChildNodes[2].InnerText;
-                user.username = node.ChildNodes[3].InnerText;
-                user.user_type = node.ChildNodes[4].InnerText;
-                user.last_login_time = node.ChildNodes[5].InnerText;
                 users.Add(user);
             }
             return users;
@@ -66,16 +62,8 @@ namespace UserSort.Classes
 
                 while (!parser.EndOfData)
                 {
-                    User user = new User();
                     string[] fields = parser.ReadFields();
-
-                    user.user_id = Convert.ToInt32(fields[0]);
-                    user.first_name = fields[1];
-                    user.last_name = fields[2];
-                    user.username = fields[3];
-                    user.user_type = fields[4];
-                    user.last_login_time = fields[5];
-
+                    User user = new User(Convert.ToInt32(fields[0]), fields[1], fields[2], fields[3], fields[4], fields[5]);
                     users.Add(user);
                 }
             }
