@@ -84,14 +84,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 478);
+            this.ClientSize = new System.Drawing.Size(797, 473);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.btnSelect);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "User Sort";
+            this.Text = "User Sort Application";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
