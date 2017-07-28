@@ -24,11 +24,10 @@ namespace UserSort.Classes
 
         public static void ExportJSON(List<User> users, string fileName = "users")
         {
-            //string json = new JavaScriptSerializer().Serialize(users);
-            //File.WriteAllText(fileName + @".json", json);
-
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
             File.WriteAllText(fileName + @".json", json);
+
+            // SORT OUT LAST LOGGED IN FORMAT
         }
 
     }

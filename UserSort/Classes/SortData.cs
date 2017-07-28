@@ -15,5 +15,13 @@ namespace UserSort.Classes
             return users;
         }
 
+        public static void ConvertLoginTime(List<User> users)
+        {
+            foreach (User user in users)
+            {
+                user.last_login_time = Convert.ToDateTime(user.last_login_time).ToString("yyyy-MM-ddTHH\\:mm\\:sszzz");
+            }
+        }
+
     }
 }

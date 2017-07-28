@@ -78,6 +78,9 @@ namespace UserSort
                 users = SortData.SortByUserID(users);
             }
 
+            // Convert "Last Login Time" to ISO 8601
+            SortData.ConvertLoginTime(users);
+
             var list = new BindingList<User>(users);
             dataGridView1.DataSource = list;
             btnExport.Enabled = true;
@@ -90,14 +93,14 @@ namespace UserSort
         {
             using (FolderBrowserDialog folderBrowser = new FolderBrowserDialog())
             {
-                
+
                 if (folderBrowser.ShowDialog() == DialogResult.OK)
                 {
                     saveLocation = folderBrowser.SelectedPath;
                     //ExportData.ExportXML(users, saveLocation + @"\users");
                     ExportData.ExportJSON(users, saveLocation + @"\users");
                 }
-                
+
 
             }
         }
