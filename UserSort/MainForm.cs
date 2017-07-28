@@ -17,6 +17,7 @@ namespace UserSort
 
         private string[] selectedFiles;
         private List<User> users = new List<User>();
+        private string saveLocation;
 
         public MainForm()
         {
@@ -36,6 +37,7 @@ namespace UserSort
                 {
                     selectedFiles = ofd.FileNames;
                     btnSelect.Enabled = false;
+                    btnImport.Enabled = true;
                 }
             }
         }
@@ -63,6 +65,7 @@ namespace UserSort
             }
 
             btnImport.Enabled = false;
+            btnDisplay.Enabled = true;
             MessageBox.Show("Files have been imported!", "Success", MessageBoxButtons.OK);
         }
 
@@ -85,7 +88,18 @@ namespace UserSort
         // Export Data to CSV, JSON and XML
         private void btnExport_Click(object sender, EventArgs e)
         {
+            using (FolderBrowserDialog folderBrowser = new FolderBrowserDialog())
+            {
+                
+                if (folderBrowser.ShowDialog() == DialogResult.OK)
+                {
+                    saveLocation = folderBrowser.SelectedPath;
+                    //ExportData.ExportXML(users, saveLocation + @"\users");
+                    ExportData.ExportJSON(users, saveLocation + @"\users");
+                }
+                
 
+            }
         }
 
     }
