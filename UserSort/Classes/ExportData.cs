@@ -8,6 +8,8 @@ using System.Xml.Serialization;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 using System.Reflection;
+using System.ComponentModel;
+
 
 namespace UserSort.Classes
 {
@@ -38,7 +40,7 @@ namespace UserSort.Classes
 
             using (var writer = new StreamWriter(path + @".csv"))
             {
-                writer.WriteLine(string.Join(", ", props.Select(p => p.Name)));
+                writer.WriteLine(string.Join(", ", props.Select(p => p.GetCustomAttribute<DisplayNameAttribute>().DisplayName)));
 
                 foreach (var item in items)
                 {

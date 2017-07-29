@@ -57,8 +57,8 @@ namespace UserSort
                         }
                     }
 
-                    btnDisplay.Enabled = true;
                     MessageBox.Show("Files have been imported!", "Success", MessageBoxButtons.OK);
+                    btnDisplay.Enabled = true;
                 }
             }
         }
