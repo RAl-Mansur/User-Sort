@@ -17,7 +17,7 @@ namespace UserSort.Classes
         public int user_id { get; set; }
         [XmlElement("firstname")]
         public string first_name { get; set; }
-        [XmlElement("lastname")]
+        [XmlElement("surname")]
         public string last_name { get; set; }
         [XmlElement("username")]
         public string username { get; set; }
