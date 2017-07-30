@@ -98,11 +98,20 @@ namespace UserSort
                     btnExport.Enabled = false;
                     btnDisplay.Enabled = false;
                     MessageBox.Show("Files have been exported!", "Success", MessageBoxButtons.OK);
+                    lblSuccess.Visible = true;
+                    btnRestart.Visible = true;
                 }
 
 
             }
         }
 
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to restart the application?", "Restart Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+        }
     }
 }

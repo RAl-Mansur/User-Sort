@@ -27,7 +27,7 @@ namespace UserSort.Classes
         [XmlElement("lastlogintime")][DisplayName("Last Login Time")]
         public string last_login_time { get; set; }
 
-        //public User() { }
+        public User() { }
 
         public User(int userID, string fName, string lName, string username, string type, string lastLogin)
         {

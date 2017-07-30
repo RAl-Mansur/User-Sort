@@ -32,6 +32,8 @@
             this.btnDisplay = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnExport = new System.Windows.Forms.Button();
+            this.lblSuccess = new System.Windows.Forms.Label();
+            this.btnRestart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,11 +82,36 @@
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // lblSuccess
+            // 
+            this.lblSuccess.AutoSize = true;
+            this.lblSuccess.Font = new System.Drawing.Font("Marlett", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuccess.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblSuccess.Location = new System.Drawing.Point(616, 18);
+            this.lblSuccess.Name = "lblSuccess";
+            this.lblSuccess.Size = new System.Drawing.Size(156, 39);
+            this.lblSuccess.TabIndex = 6;
+            this.lblSuccess.Text = "Success!";
+            this.lblSuccess.Visible = false;
+            // 
+            // btnRestart
+            // 
+            this.btnRestart.Location = new System.Drawing.Point(623, 62);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(149, 23);
+            this.btnRestart.TabIndex = 7;
+            this.btnRestart.Text = "Restart Application";
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Visible = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 473);
+            this.Controls.Add(this.btnRestart);
+            this.Controls.Add(this.lblSuccess);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDisplay);
@@ -96,6 +123,7 @@
             this.Text = "User Sort Application";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,6 +133,8 @@
         private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Label lblSuccess;
+        private System.Windows.Forms.Button btnRestart;
     }
 }
 
